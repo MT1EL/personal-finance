@@ -1,5 +1,7 @@
+import { Text } from "@chakra-ui/react";
+
 const Overview = () => {
-  return <h1>Overview</h1>;
+  return <Text textStyle="text1">Overview</Text>;
 };
 
 export default Overview;

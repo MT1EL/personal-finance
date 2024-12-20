@@ -160,6 +160,38 @@ const theme = extendTheme({
         },
       },
     },
+
+    Input: {
+      baseStyle: {
+        field: {
+          px: 250,
+          py: 150,
+          minHeight: "fit-content",
+          _placeholder: {
+            color: "beige.500",
+          },
+          outline: "none",
+        },
+      },
+      sizes: {},
+      variants: {
+        filled: {
+          field: {
+            borderColor: "beige.500", // Corrected the case to "borderColor"
+            backgroundColor: "white",
+
+            _hover: {
+              backgroundColor: "white",
+              borderColor: "beige.500", // Changes border on hover
+            },
+            _focus: {
+              backgroundColor: "white",
+              borderColor: "beige.500", // Changes border on focus
+            },
+          },
+        },
+      },
+    },
   },
 });
 

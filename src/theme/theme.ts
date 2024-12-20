@@ -2,13 +2,13 @@
 import { extendTheme } from "@chakra-ui/react";
 import "../assets/fonts/static/PublicSans-Bold.ttf";
 import "../assets/fonts/static/PublicSans-Regular.ttf";
-
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
   fonts: {
     heading: "Public Sans Bold",
     body: "Public Sans",
   },
+
   colors: {
     beige: {
       100: "#F8F4F0",
@@ -21,13 +21,13 @@ const theme = extendTheme({
       900: "#201F24",
     },
     secondary: {
-      green: "#277C78",
-      yellow: "#F2CDAC",
-      cyan: "#82C9D7",
-      navy: "#626070",
-      red: "#C94736",
       purple: "#826CB0",
     },
+    green: "#277C78",
+    yellow: "#F2CDAC",
+    cyan: "#82C9D7",
+    navy: "#626070",
+    red: "#C94736",
     purple: "#AF81BA",
     Turquoise: "#597C7C",
     brown: "#93674F",
@@ -108,6 +108,58 @@ const theme = extendTheme({
     300: "24px",
     400: "32px",
     500: "40px",
+  },
+
+  components: {
+    Button: {
+      baseStyle: {
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 200,
+        padding: 200,
+        border: "1px solid #D2D2D2",
+        minHeight: "fit-content",
+      },
+      sizes: {},
+
+      variants: {
+        primary: {
+          textStyle: "text4Bold",
+          backgroundColor: "grey.900",
+          color: "white",
+          _hover: {
+            backgroundColor: "grey.500",
+          },
+        },
+        secondary: {
+          textStyle: "text4Bold",
+          backgroundColor: "beige.100",
+          color: "grey.900",
+          borderColor: "transparent",
+          _hover: {
+            backgroundColor: "white",
+            borderColor: "beige.500",
+          },
+        },
+        tertiary: {
+          padding: 0,
+          border: "none",
+          color: "grey.500",
+          _hover: {
+            color: "grey.900",
+          },
+        },
+        destroy: {
+          backgroundColor: "red",
+          color: "white",
+          border: "none",
+          _hover: {
+            opacity: 0.8, // Adding a slight white overlay with reduced opacity
+          },
+        },
+      },
+    },
   },
 });
 

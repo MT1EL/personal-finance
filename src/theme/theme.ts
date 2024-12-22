@@ -4,6 +4,13 @@ import "../assets/fonts/static/PublicSans-Bold.ttf";
 import "../assets/fonts/static/PublicSans-Regular.ttf";
 // 2. Call `extendTheme` and pass your custom values
 const theme = extendTheme({
+  styles: {
+    global: {
+      "html, body": {
+        bg: "beige.100", // Set the default background color
+      },
+    },
+  },
   fonts: {
     heading: "Public Sans Bold",
     body: "Public Sans",

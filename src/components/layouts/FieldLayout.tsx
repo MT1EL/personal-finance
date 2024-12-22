@@ -12,7 +12,7 @@ const FieldLayout = (props: Props) => {
   return (
     <FormControl>
       {title && (
-        <FormLabel textStyle="text5Bold" marginBottom={50}>
+        <FormLabel textStyle="text5Bold" color={"gray.500"} marginBottom={50}>
           {title}
         </FormLabel>
       )}

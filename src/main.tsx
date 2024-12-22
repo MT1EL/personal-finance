@@ -7,7 +7,7 @@ import theme from "./theme/theme.ts";
 import { ChakraProvider } from "@chakra-ui/react";
 import "./styles/styles.css";
 
-const isAuthenticated = true;
+const isAuthenticated = false;
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <ChakraProvider theme={theme}>

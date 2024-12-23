@@ -15,18 +15,37 @@ type Props = {
   leftIcon?: boolean;
   rightIcon?: boolean;
   placeholder: string;
-  title?: string;
+  name?: string;
   helperText?: string;
-  defaultType?: "password" | "text";
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
+  value?: string;
+  helperTextStyle?: string;
 };
 
 const Input = (props: Props) => {
-  const { leftIcon, rightIcon, placeholder, title, helperText, defaultType } =
-    props;
-  const [type, setType] = useState(defaultType ?? "text");
+  const {
+    leftIcon,
+    rightIcon,
+    placeholder,
+    name,
+    helperText,
+    onChange,
+    onBlur,
+    value,
+    helperTextStyle,
+  } = props;
+  const defaultType = name?.toLowerCase().includes("password")
+    ? "password"
+    : name;
+  const [type, setType] = useState(defaultType);
 
   return (
-    <FieldLayout title={title} helperText={helperText}>
+    <FieldLayout
+      title={name ? name.charAt(0).toUpperCase() + name.slice(1) : ""}
+      helperText={helperText}
+      helperTextStyle={helperTextStyle}
+    >
       <InputGroup>
         {leftIcon && (
           <InputLeftElement h={"100%"}>
@@ -35,7 +54,15 @@ const Input = (props: Props) => {
             </Text>
           </InputLeftElement>
         )}
-        <ChakraInput placeholder={placeholder} variant={"filled"} type={type} />
+        <ChakraInput
+          placeholder={placeholder}
+          variant={"filled"}
+          type={type}
+          name={name}
+          onChange={onChange}
+          onBlur={onBlur}
+          value={value}
+        />
         {rightIcon ||
           (defaultType == "password" && (
             <InputRightElement

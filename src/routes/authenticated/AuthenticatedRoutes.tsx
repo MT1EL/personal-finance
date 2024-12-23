@@ -26,6 +26,8 @@ const AuthenticatedRoutes = () => {
 
       {/* Redirect root path to Overview as default */}
       <Route path="/" element={<Navigate to="/overview" replace />} />
+      <Route path="/login" element={<Navigate to="/overview" replace />} />
+      <Route path="/register" element={<Navigate to="/overview" replace />} />
 
       {/* 404 route */}
       <Route path="*" element={<PageNotFound />} />

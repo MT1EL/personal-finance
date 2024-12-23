@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Login from "../../pages/authentication/Login";
 import Register from "../../pages/authentication/Register";
-import PageNotFound from "../../pages/404";
 
 const AuthenticationRoutes = () => {
   return (
@@ -16,7 +15,7 @@ const AuthenticationRoutes = () => {
       <Route path="/" element={<Navigate to="/login" replace />} />
 
       {/* 404 route */}
-      <Route path="*" element={<PageNotFound />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   );
 };

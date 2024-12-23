@@ -1,5 +1,8 @@
+import { Button } from "@chakra-ui/react";
+import { getAuth } from "firebase/auth";
+
 const PageNotFound = () => {
-  return <div>PageNotFound</div>;
+  return <Button onClick={() => getAuth().signOut()}>Sign out</Button>;
 };
 
 export default PageNotFound;

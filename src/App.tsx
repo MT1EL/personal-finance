@@ -1,5 +1,40 @@
+import { useEffect, useState } from "react";
+import AuthenticatedRoutes from "./routes/authenticated/AuthenticatedRoutes";
+import AuthenticationRoutes from "./routes/unauthenticated/AuthenticationRoutes";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { Text } from "@chakra-ui/react";
 function App() {
-  return <h1>welcome</h1>;
+  const auth = getAuth();
+  const [isAuthenticated, setIsAuthenticated] = useState(
+    auth.currentUser !== null
+  );
+
+  useEffect(() => {
+    // This listens for any change in auth state (sign in or sign out)
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setIsAuthenticated(true); // The user is logged in
+      } else {
+        setIsAuthenticated(false); // The user is logged out
+      }
+      console.log("User state changed. Current user is:", user);
+    });
+
+    // Cleanup listener when component unmounts
+
+    return () => unsubscribe();
+  }, [auth]);
+
+  if (auth === null) {
+    // While checking the auth state, render loading state
+    return (
+      <Text textAlign={"center"} textStyle={"text1"} color="grey.900">
+        Loading...
+      </Text>
+    );
+  }
+
+  return isAuthenticated ? <AuthenticatedRoutes /> : <AuthenticationRoutes />;
 }
 
 export default App;

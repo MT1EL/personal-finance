@@ -4,11 +4,12 @@ import React from "react";
 type Props = {
   title?: string;
   helperText?: string;
+  helperTextStyle?: string;
   children: React.ReactNode;
 };
 
 const FieldLayout = (props: Props) => {
-  const { title, helperText, children } = props;
+  const { title, helperText, helperTextStyle, children } = props;
   return (
     <FormControl>
       {title && (
@@ -22,6 +23,7 @@ const FieldLayout = (props: Props) => {
           justifySelf={"flex-end"}
           textStyle={"text5"}
           marginTop={50}
+          color={helperTextStyle === "error" ? "red" : "grey.500"}
         >
           {helperText}
         </FormHelperText>

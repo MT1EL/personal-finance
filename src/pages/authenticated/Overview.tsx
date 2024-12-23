@@ -1,22 +1,18 @@
-import { Button, Flex, VStack } from "@chakra-ui/react";
-import Input from "@/components/ui/Input";
+import { Button, Flex, Text } from "@chakra-ui/react";
+import { getAuth } from "firebase/auth";
+
 const Overview = () => {
   return (
     <Flex gap={200} p={200}>
-      <VStack gap={200}>
-        <Button variant={"primary"}>Placeholder</Button>
-        <Button variant={"secondary"}>Placeholder</Button>
-        <Button variant={"tertiary"}>Placeholder</Button>
-        <Button variant={"destroy"}>Placeholder</Button>
-      </VStack>
-      <VStack gap={200}>
-        <Input
-          leftIcon
-          rightIcon
-          placeholder={"Placeholder"}
-          defaultType="password"
-        />
-      </VStack>
+      <Text>Overview</Text>
+      <Button
+        colorScheme={"teal"}
+        onClick={() => {
+          getAuth().signOut();
+        }}
+      >
+        Log out
+      </Button>
     </Flex>
   );
 };

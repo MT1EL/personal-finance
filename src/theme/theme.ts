@@ -9,6 +9,10 @@ const theme = extendTheme({
       "html, body": {
         bg: "beige.100", // Set the default background color
       },
+      "#root": {
+        display: "flex",
+        minHeight: "100vh",
+      },
     },
   },
   fonts: {

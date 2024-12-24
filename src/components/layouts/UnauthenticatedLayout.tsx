@@ -1,6 +1,7 @@
 import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
 import illustration from "../../assets/images/illustration-authentication.svg";
 import logo from "../../assets/images/logo-large.svg";
+import Header from "../ui/Header";
 
 type Props = {
   children: React.ReactNode;
@@ -8,7 +9,12 @@ type Props = {
 
 const UnauthenticatedLayout = ({ children }: Props) => {
   return (
-    <Flex>
+    <Flex
+      flexDirection={["column", "column", "column", "row"]}
+      justifyContent={"center"}
+      flex={1}
+    >
+      <Header />
       <Box p={250} maxH={"100vh"} display={["none", "none", "none", "block"]}>
         <Box position={"relative"} h={"100%"}>
           <Image

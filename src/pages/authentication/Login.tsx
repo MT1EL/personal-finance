@@ -1,4 +1,4 @@
-import { Button, Flex, Text, VStack, Link } from "@chakra-ui/react";
+import { Button, Flex, Text, VStack, Link, useToast } from "@chakra-ui/react";
 import Input from "@/components/ui/Input";
 import UnauthenticatedLayout from "@/components/layouts/UnauthenticatedLayout";
 import { useFormik } from "formik";
@@ -7,6 +7,7 @@ import { LoginValues } from "@/types/unauthenticated";
 import { loginUser } from "@/services/auth";
 
 const Login = () => {
+  const toast = useToast();
   const formik = useFormik({
     initialValues: {
       email: "",
@@ -20,7 +21,22 @@ const Login = () => {
       password: yup.string().required("ეს ველი სავალდებულოა"),
     }),
     onSubmit: (values) => {
-      loginUser(values);
+      loginUser(values)
+        .then((res) => {
+          toast({
+            title: "Logged in Succesfully.",
+            description: `Welcome, ${res.displayName}!`,
+            status: "success",
+            colorScheme: "teal", // Changing the color scheme for better visibility
+            duration: 5000,
+            isClosable: true,
+            variant: "left-accent", // Optional, to add a small accent to the left
+            position: "top-right", // You can also change position to "top", "bottom-left", etc. for better visibility
+          });
+        })
+        .catch((error) => {
+          formik.setFieldError("password", error.message);
+        });
     },
   });
 

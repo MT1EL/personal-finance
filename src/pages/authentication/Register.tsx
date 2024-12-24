@@ -35,7 +35,7 @@ const Register = () => {
       registerUser(values)
         .then((res) => {
           toast({
-            title: "Account created.",
+            title: "Account created succesfully.",
             description: `Welcome, ${res.displayName}!`,
             status: "success",
             colorScheme: "teal", // Changing the color scheme for better visibility
@@ -46,7 +46,7 @@ const Register = () => {
           });
         })
         .catch((error) => {
-          console.error("Error registering user:", error.message);
+          formik.setFieldValue("repeatPassword", error.message);
         });
     },
   });

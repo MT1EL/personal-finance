@@ -8,9 +8,11 @@ type Props = {
 
 const AuthenticatedLayout = ({ children }: Props) => {
   return (
-    <Flex justifyContent={"space-between"}>
+    <Flex justifyContent={"space-between"} flex={1}>
       <Sidebar />
-      {children}
+      <Flex alignItems={"flex-start"} flex={1}>
+        {children}
+      </Flex>
     </Flex>
   );
 };

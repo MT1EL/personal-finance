@@ -2,9 +2,10 @@ import UnauthenticatedLayout from "@/components/layouts/UnauthenticatedLayout";
 import Input from "@/components/ui/Input";
 import { registerUser } from "@/services/auth";
 import { RegisterValues } from "@/types/unauthenticated";
-import { Button, Flex, Link, Text, useToast, VStack } from "@chakra-ui/react";
+import { Button, Flex, Text, useToast, VStack } from "@chakra-ui/react";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import { Link } from "react-router-dom";
 
 const Register = () => {
   const toast = useToast();
@@ -95,14 +96,15 @@ const Register = () => {
         </Button>
         <Text textStyle={"text4"} color={"grey.500"}>
           Already have an account?
-          <Link
+          <Text
+            as={Link}
             color={"grey.900"}
             textStyle={"text4Bold"}
-            href={"/login"}
+            to={"/login"}
             ml={100}
           >
             Login
-          </Link>
+          </Text>
         </Text>
       </Flex>
     </UnauthenticatedLayout>

@@ -1,10 +1,11 @@
-import { Button, Flex, Text, VStack, Link, useToast } from "@chakra-ui/react";
+import { Button, Flex, Text, VStack, useToast } from "@chakra-ui/react";
 import Input from "@/components/ui/Input";
 import UnauthenticatedLayout from "@/components/layouts/UnauthenticatedLayout";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { LoginValues } from "@/types/unauthenticated";
 import { loginUser } from "@/services/auth";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const toast = useToast();
@@ -82,14 +83,15 @@ const Login = () => {
         </Button>
         <Text textStyle={"text4"} color={"grey.500"}>
           Need to create an account?
-          <Link
+          <Text
+            as={Link}
             color={"grey.900"}
             textStyle={"text4Bold"}
-            href={"/register"}
+            to={"/register"}
             ml={100}
           >
             Register
-          </Link>
+          </Text>
         </Text>
       </Flex>
     </UnauthenticatedLayout>

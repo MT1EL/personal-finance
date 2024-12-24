@@ -1,10 +1,10 @@
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Navigate, Route } from "react-router-dom";
 import Login from "../../pages/authentication/Login";
 import Register from "../../pages/authentication/Register";
 
 const AuthenticationRoutes = () => {
   return (
-    <Routes>
+    <>
       {/* Login route */}
       <Route path="/login" element={<Login />} />
 
@@ -16,7 +16,7 @@ const AuthenticationRoutes = () => {
 
       {/* 404 route */}
       <Route path="*" element={<Navigate to="/login" replace />} />
-    </Routes>
+    </>
   );
 };
 

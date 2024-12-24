@@ -21,7 +21,7 @@ const AuthenticatedRoutes = () => {
         <Route path="/pots" element={<Pots />} />
 
         {/* Recurring Bills route */}
-        <Route path="/recurring-bills" element={<Recuiringbills />} />
+        <Route path="/recuirring-bills" element={<Recuiringbills />} />
 
         {/* Transactions route */}
         <Route path="/transactions" element={<Transactions />} />

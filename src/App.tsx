@@ -8,6 +8,7 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(
     auth.currentUser !== null
   );
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // This listens for any change in auth state (sign in or sign out)
@@ -17,6 +18,7 @@ function App() {
       } else {
         setIsAuthenticated(false); // The user is logged out
       }
+      setLoading(false);
       console.log("User state changed. Current user is:", user);
     });
 
@@ -25,7 +27,7 @@ function App() {
     return () => unsubscribe();
   }, [auth]);
 
-  if (auth === null) {
+  if (loading) {
     // While checking the auth state, render loading state
     return (
       <Text textAlign={"center"} textStyle={"text1"} color="grey.900">

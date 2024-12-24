@@ -15,6 +15,13 @@ const theme = extendTheme({
       },
     },
   },
+  breakpoints: {
+    sm: "30em", // 480px equivalent (small screens)
+    md: "48em", // 768px equivalent (medium screens/tablet)
+    lg: "62em", // 992px equivalent (large screens)
+    xl: "80em", // 1280px equivalent (extra large screens)
+  },
+
   fonts: {
     heading: "Public Sans Bold",
     body: "Public Sans",

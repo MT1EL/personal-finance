@@ -1,17 +1,57 @@
-import { Button, Flex } from "@chakra-ui/react";
-import { getAuth } from "firebase/auth";
+import BalanceCard from "@/components/ui/cards/BalanceCard";
+import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import PotSection from "@/components/ui/sections/overview/PotSection";
+import TransactionsSection from "@/components/ui/sections/overview/TransactionsSection";
+import ReccuirringBillsSection from "@/components/ui/sections/overview/ReccuirringBillsSection";
 
 const Overview = () => {
   return (
-    <Flex flex={1} justifyContent={"center"} alignItems={"center"} bg="red">
-      <Button
-        colorScheme={"teal"}
-        onClick={() => {
-          getAuth().signOut();
-        }}
+    <Flex
+      px={[200, 500]}
+      py={[250, 400]}
+      gap={400}
+      flexDirection={"column"}
+      width={"100%"}
+      maxW={"1040px"}
+      overflowX={"hidden"}
+      mx="auto"
+    >
+      {/* Title Section */}
+      <Box py={[0, 100]}>
+        <Text textStyle={"text1"} color={"grey.900"}>
+          Overview
+        </Text>
+      </Box>
+
+      {/* Balance Section */}
+
+      <Flex
+        flexDirection={["column", "row"]}
+        gap={[150, 300]}
+        maxW={"100%"}
+        w={"100%"}
+        overflowX={"scroll"}
       >
-        Log out
-      </Button>
+        <BalanceCard title={"Current Balance"} balance={"4,836.00"} />
+        <BalanceCard title={"Income"} balance={"3,814.25"} />
+        <BalanceCard title={"Expenses"} balance={"1,700.50"} />
+      </Flex>
+
+      {/* Body Section */}
+      <Flex gap={300} flexDirection={["column", "column", "row"]} w={"100%"}>
+        <Flex flexDirection={"column"} gap={300} w="608px">
+          {/* Pots Section */}
+          <PotSection />
+
+          {/* Transactions Section */}
+          <TransactionsSection />
+        </Flex>
+        <VStack alignItems={"space-between"} maxW={"330px"} w="100%">
+          <Box w={"100%"} bg={"grey.100"} height={"1px"} />
+          {/* Reccuirring Bills Section */}
+          <ReccuirringBillsSection />
+        </VStack>
+      </Flex>
     </Flex>
   );
 };

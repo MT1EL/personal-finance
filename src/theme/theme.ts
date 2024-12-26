@@ -8,10 +8,17 @@ const theme = extendTheme({
     global: {
       "html, body": {
         bg: "beige.100", // Set the default background color
+        minHeight: "100%",
+        width: "100%",
       },
       "#root": {
         display: "flex",
-        minHeight: "100vh",
+        minHeight: "100%",
+        width: "100%",
+      },
+      "*": {
+        boxSizing: "border-box",
+        maxW: "100%",
       },
     },
   },

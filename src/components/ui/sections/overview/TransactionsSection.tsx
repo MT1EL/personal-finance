@@ -1,9 +1,9 @@
-import { Divider, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import caretRight from "@/assets/images/icon-caret-right.svg";
+import { Divider, VStack } from "@chakra-ui/react";
 import daniel from "@/assets/images/avatars/daniel-carter.jpg";
 import emma from "@/assets/images/avatars/emma-richardson.jpg";
 import harper from "@/assets/images/avatars/harper-edwards.jpg";
 import TransactionComponent from "../../TransactionComponent";
+import OverviewSectionLayout from "./shared/OverviewSectionLayout";
 const TransactionsSection = () => {
   const transactions = [
     {
@@ -38,20 +38,7 @@ const TransactionsSection = () => {
     },
   ];
   return (
-    <VStack
-      gap={400}
-      px={[250, 400]}
-      py={[300, 400]}
-      bg="white"
-      borderRadius={"12px"}
-      w={"100%"}
-    >
-      <Flex justifyContent={"space-between"} alignItems={"center"} w="100%">
-        <Text textStyle={"text2"}>Transactions</Text>
-        <Flex gap={150}>
-          <Text textStyle={"text4"}>View All</Text> <Image src={caretRight} />
-        </Flex>
-      </Flex>
+    <OverviewSectionLayout title="Transactions">
       <VStack gap={250} w={"100%"}>
         {transactions.map((transaction, index) => (
           <>
@@ -66,7 +53,7 @@ const TransactionsSection = () => {
           </>
         ))}
       </VStack>
-    </VStack>
+    </OverviewSectionLayout>
   );
 };
 

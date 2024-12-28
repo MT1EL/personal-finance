@@ -1,8 +1,9 @@
-import { Box, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import caretRight from "@/assets/images/icon-caret-right.svg";
+import { Box, Flex, VStack } from "@chakra-ui/react";
+
 import { ResponsivePie } from "@nivo/pie";
 import PotTag from "../../tags/PotTag";
 import { useState } from "react";
+import OverviewSectionLayout from "./shared/OverviewSectionLayout";
 
 const BudgetsSection = () => {
   const [hoveredLegend, setHoveredLegend] = useState<string | null>(null);
@@ -14,28 +15,9 @@ const BudgetsSection = () => {
     { id: "Personal Care", value: 100, color: "#626070" },
   ];
   return (
-    <Flex
-      px={[250, 400]}
-      py={[300, 400]}
-      flexDirection={"column"}
-      gap={250}
-      borderRadius={"12px"}
-      bg={"white"}
-      w={"100%"}
-      height={"100%"}
-    >
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
-        <Text textStyle={"text2"} color={"grey.900"}>
-          Budgets
-        </Text>
-        <Flex gap={150} alignItems={"center"}>
-          <Text textStyle={"text4"} color={"grey.500"}>
-            See details
-          </Text>
-          <Image src={caretRight} />
-        </Flex>
-      </Flex>
+    <OverviewSectionLayout title={"Budgets"}>
       <Flex gap={200} my="auto">
+        {/* Pie Chart */}
         <Box w={["100%", "100%", "250px"]} h={"250px"} position={"relative"}>
           <Box
             w={"80%"}
@@ -103,6 +85,7 @@ const BudgetsSection = () => {
             ]}
           />
         </Box>
+        {/* Pots */}
         <VStack alignItems={"flex-start"} gap={200}>
           {data.map((pot) => (
             <Box
@@ -119,7 +102,7 @@ const BudgetsSection = () => {
           ))}
         </VStack>
       </Flex>
-    </Flex>
+    </OverviewSectionLayout>
   );
 };
 

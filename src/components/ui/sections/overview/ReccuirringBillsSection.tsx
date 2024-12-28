@@ -1,6 +1,6 @@
-import { Flex, Image, Text, VStack } from "@chakra-ui/react";
-import caretRight from "@/assets/images/icon-caret-right.svg";
+import { VStack } from "@chakra-ui/react";
 import BillsTag from "../../tags/BillsTag";
+import OverviewSectionLayout from "./shared/OverviewSectionLayout";
 
 const ReccuirringBillsSection = () => {
   const bills = [
@@ -22,22 +22,7 @@ const ReccuirringBillsSection = () => {
   ];
 
   return (
-    <Flex
-      flexDirection={"column"}
-      gap={400}
-      py={[300, 400]}
-      px={[250, 400]}
-      bg={"white"}
-      borderRadius={"12px"}
-    >
-      <Flex w={"100%"} justifyContent={"space-between"} alignItems={"center"}>
-        <Text textStyle={"text2"}>Reccuirring Bills</Text>
-        <Flex gap={150}>
-          <Text textStyle={"text4"}>View All</Text>
-          <Image src={caretRight} />
-        </Flex>
-      </Flex>
-
+    <OverviewSectionLayout title="Recuirring Bills">
       <VStack gap={150}>
         {bills.map((bill, index) => (
           <BillsTag
@@ -48,7 +33,7 @@ const ReccuirringBillsSection = () => {
           />
         ))}
       </VStack>
-    </Flex>
+    </OverviewSectionLayout>
   );
 };
 

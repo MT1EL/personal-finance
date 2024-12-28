@@ -1,7 +1,7 @@
 import { Flex, Grid, Image, Text } from "@chakra-ui/react";
-import caretRight from "@/assets/images/icon-caret-right.svg";
 import jar from "@/assets/images/icon-pot.svg";
 import PotTag from "../../tags/PotTag";
+import OverviewSectionLayout from "./shared/OverviewSectionLayout";
 
 const PotSection = () => {
   const pots = [
@@ -27,28 +27,9 @@ const PotSection = () => {
     },
   ];
   return (
-    <Flex
-      px={[250, 400]}
-      py={[300, 400]}
-      flexDirection={"column"}
-      gap={250}
-      borderRadius={"12px"}
-      bg={"white"}
-      w={"100%"}
-    >
-      <Flex justifyContent={"space-between"} alignItems={"center"}>
-        <Text textStyle={"text2"} color={"grey.900"}>
-          Pots
-        </Text>
-        <Flex gap={150} alignItems={"center"}>
-          <Text textStyle={"text4"} color={"grey.500"}>
-            See details
-          </Text>
-          <Image src={caretRight} />
-        </Flex>
-      </Flex>
-
+    <OverviewSectionLayout title="Pots">
       <Flex gap={250} flexDirection={["column", "row"]}>
+        {/* Total Saved */}
         <Flex
           p={200}
           gap={200}
@@ -69,6 +50,8 @@ const PotSection = () => {
             </Text>
           </Flex>
         </Flex>
+
+        {/* Pots */}
         <Grid gridTemplateColumns={"repeat(2, 1fr)"} gap={200}>
           {pots.map((pot) => (
             <PotTag
@@ -80,7 +63,7 @@ const PotSection = () => {
           ))}
         </Grid>
       </Flex>
-    </Flex>
+    </OverviewSectionLayout>
   );
 };
 

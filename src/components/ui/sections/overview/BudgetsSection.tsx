@@ -3,7 +3,7 @@ import { Box, Flex, VStack } from "@chakra-ui/react";
 import { ResponsivePie } from "@nivo/pie";
 import PotTag from "../../tags/PotTag";
 import { useState } from "react";
-import OverviewSectionLayout from "./shared/OverviewSectionLayout";
+import OverviewSectionLayout from "../../../layouts/OverviewSectionLayout";
 
 const BudgetsSection = () => {
   const [hoveredLegend, setHoveredLegend] = useState<string | null>(null);
@@ -16,9 +16,14 @@ const BudgetsSection = () => {
   ];
   return (
     <OverviewSectionLayout title={"Budgets"}>
-      <Flex gap={200} my="auto">
+      <Flex gap={200} my="auto" flexDirection={["column", "row"]}>
         {/* Pie Chart */}
-        <Box w={["100%", "100%", "250px"]} h={"250px"} position={"relative"}>
+        <Box
+          w={["100%", "100%", "250px"]}
+          h={"250px"}
+          position={"relative"}
+          mx="auto"
+        >
           <Box
             w={"80%"}
             aspectRatio={1}
@@ -86,7 +91,12 @@ const BudgetsSection = () => {
           />
         </Box>
         {/* Pots */}
-        <VStack alignItems={"flex-start"} gap={200}>
+        <VStack
+          gap={200}
+          alignItems={"flex-start"}
+          display={["grid", "flex"]}
+          gridTemplateColumns={["1fr 1fr"]}
+        >
           {data.map((pot) => (
             <Box
               onMouseEnter={() => setHoveredLegend(pot.id)}

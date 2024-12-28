@@ -1,7 +1,7 @@
 import { Flex, Grid, Image, Text } from "@chakra-ui/react";
 import jar from "@/assets/images/icon-pot.svg";
 import PotTag from "../../tags/PotTag";
-import OverviewSectionLayout from "./shared/OverviewSectionLayout";
+import OverviewSectionLayout from "../../../layouts/OverviewSectionLayout";
 
 const PotSection = () => {
   const pots = [

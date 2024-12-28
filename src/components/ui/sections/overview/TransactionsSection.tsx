@@ -3,7 +3,7 @@ import daniel from "@/assets/images/avatars/daniel-carter.jpg";
 import emma from "@/assets/images/avatars/emma-richardson.jpg";
 import harper from "@/assets/images/avatars/harper-edwards.jpg";
 import TransactionComponent from "../../TransactionComponent";
-import OverviewSectionLayout from "./shared/OverviewSectionLayout";
+import OverviewSectionLayout from "../../../layouts/OverviewSectionLayout";
 const TransactionsSection = () => {
   const transactions = [
     {

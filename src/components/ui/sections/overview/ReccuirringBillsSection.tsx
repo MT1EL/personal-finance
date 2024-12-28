@@ -1,6 +1,6 @@
 import { VStack } from "@chakra-ui/react";
 import BillsTag from "../../tags/BillsTag";
-import OverviewSectionLayout from "./shared/OverviewSectionLayout";
+import OverviewSectionLayout from "../../../layouts/OverviewSectionLayout";
 
 const ReccuirringBillsSection = () => {
   const bills = [

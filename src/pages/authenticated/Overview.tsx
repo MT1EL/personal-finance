@@ -45,18 +45,14 @@ const Overview = () => {
         w={"100%"}
         flexWrap={"wrap"}
       >
-        <Flex flexDirection={"column"} gap={300} w={["100%", "100%", "608px"]}>
+        <Flex flexDirection={"column"} gap={300} flexGrow={1}>
           {/* Pots Section */}
           <PotSection />
 
           {/* Transactions Section */}
           <TransactionsSection />
         </Flex>
-        <VStack
-          alignItems={"space-between"}
-          maxW={["100%", "100%", "328px"]}
-          w="100%"
-        >
+        <VStack alignItems={"space-between"} flexGrow={1}>
           <BudgetsSection />
           {/* Reccuirring Bills Section */}
           <ReccuirringBillsSection />

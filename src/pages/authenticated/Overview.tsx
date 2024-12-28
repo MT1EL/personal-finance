@@ -3,6 +3,7 @@ import { Box, Flex, Text, VStack } from "@chakra-ui/react";
 import PotSection from "@/components/ui/sections/overview/PotSection";
 import TransactionsSection from "@/components/ui/sections/overview/TransactionsSection";
 import ReccuirringBillsSection from "@/components/ui/sections/overview/ReccuirringBillsSection";
+import BudgetsSection from "@/components/ui/sections/overview/BudgetsSection";
 
 const Overview = () => {
   return (
@@ -38,16 +39,25 @@ const Overview = () => {
       </Flex>
 
       {/* Body Section */}
-      <Flex gap={300} flexDirection={["column", "column", "row"]} w={"100%"}>
-        <Flex flexDirection={"column"} gap={300} w="608px">
+      <Flex
+        gap={300}
+        flexDirection={["column", "column", "row"]}
+        w={"100%"}
+        flexWrap={"wrap"}
+      >
+        <Flex flexDirection={"column"} gap={300} w={["100%", "100%", "608px"]}>
           {/* Pots Section */}
           <PotSection />
 
           {/* Transactions Section */}
           <TransactionsSection />
         </Flex>
-        <VStack alignItems={"space-between"} maxW={"330px"} w="100%">
-          <Box w={"100%"} bg={"grey.100"} height={"1px"} />
+        <VStack
+          alignItems={"space-between"}
+          maxW={["100%", "100%", "328px"]}
+          w="100%"
+        >
+          <BudgetsSection />
           {/* Reccuirring Bills Section */}
           <ReccuirringBillsSection />
         </VStack>

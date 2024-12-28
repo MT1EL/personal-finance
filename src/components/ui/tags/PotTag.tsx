@@ -11,7 +11,7 @@ const PotTag = (props: Props) => {
   return (
     <Flex gap={200} position={"relative"} height={"fit-content"}>
       <Box bg={color} width={"4px"} borderRadius={"8px"} />
-      <VStack gap={50}>
+      <VStack gap={50} alignItems={"flex-start"}>
         <Text textStyle={"text5"} color={"grey.500"}>
           {name}
         </Text>

@@ -8,12 +8,12 @@ const theme = extendTheme({
     global: {
       "html, body": {
         bg: "beige.100", // Set the default background color
-        minHeight: "100%",
+        minHeight: "100vh",
         width: "100%",
       },
       "#root": {
         display: "flex",
-        minHeight: "100%",
+        minHeight: "100vh",
         width: "100%",
       },
       "*": {
@@ -36,33 +36,114 @@ const theme = extendTheme({
 
   colors: {
     beige: {
-      100: "#F8F4F0",
-      500: "#98908B",
+      100: "#F8F4F0", // Preserved value
+      500: "#98908B", // Preserved value
+      700: "#98908B", // Defaulted to 500's value
     },
     grey: {
-      100: "#F2F2F2",
-      300: "#B3B3B3",
-      500: "#696868",
-      900: "#201F24",
+      100: "#F2F2F2", // Preserved value
+      300: "#B3B3B3", // Preserved value
+      500: "#696868", // Preserved value
+      900: "#201F24", // Preserved value
     },
     secondary: {
-      purple: "#826CB0",
+      purple: {
+        100: "#826CB0", // Preserved value
+        300: "#826CB0", // Defaulted to 100's value
+        500: "#826CB0", // Defaulted to 100's value
+        700: "#826CB0", // Defaulted to 100's value
+      },
     },
-    green: "#277C78",
-    yellow: "#F2CDAC",
-    cyan: "#82C9D7",
-    navy: "#626070",
-    red: "#C94736",
-    purple: "#AF81BA",
-    Turquoise: "#597C7C",
-    brown: "#93674F",
-    magenta: "#934F6F",
-    blue: "#3F82B2",
-    navyGrey: "#97A0AC",
-    armyGreen: "#7F9161",
-    gold: "#CAB361",
-    Orange: "#BE6C49",
-    white: "#FFFFFF",
+    green: {
+      100: "#277C78", // Defaulted value
+      300: "#277C78", // Defaulted value
+      500: "#277C78", // Defaulted value
+      700: "#277C78", // Defaulted value
+    },
+    yellow: {
+      100: "#F2CDAC", // Defaulted value
+      300: "#F2CDAC", // Defaulted value
+      500: "#F2CDAC", // Defaulted value
+      700: "#F2CDAC", // Defaulted value
+    },
+    cyan: {
+      100: "#82C9D7", // Defaulted value
+      300: "#82C9D7", // Defaulted value
+      500: "#82C9D7", // Defaulted value
+      700: "#82C9D7", // Defaulted value
+    },
+    navy: {
+      100: "#626070", // Defaulted value
+      300: "#626070", // Defaulted value
+      500: "#626070", // Defaulted value
+      700: "#626070", // Defaulted value
+    },
+    red: {
+      100: "#C94736", // Defaulted value
+      300: "#C94736", // Defaulted value
+      500: "#C94736", // Defaulted value
+      700: "#C94736", // Defaulted value
+    },
+    purple: {
+      100: "#AF81BA", // Defaulted value
+      300: "#AF81BA", // Defaulted value
+      500: "#AF81BA", // Defaulted value
+      700: "#AF81BA", // Defaulted value
+    },
+    turquoise: {
+      100: "#597C7C", // Defaulted value
+      300: "#597C7C", // Defaulted value
+      500: "#597C7C", // Defaulted value
+      700: "#597C7C", // Defaulted value
+    },
+    brown: {
+      100: "#93674F", // Defaulted value
+      300: "#93674F", // Defaulted value
+      500: "#93674F", // Defaulted value
+      700: "#93674F", // Defaulted value
+    },
+    magenta: {
+      100: "#934F6F", // Defaulted value
+      300: "#934F6F", // Defaulted value
+      500: "#934F6F", // Defaulted value
+      700: "#934F6F", // Defaulted value
+    },
+    blue: {
+      100: "#3F82B2", // Defaulted value
+      300: "#3F82B2", // Defaulted value
+      500: "#3F82B2", // Defaulted value
+      700: "#3F82B2", // Defaulted value
+    },
+    navyGrey: {
+      100: "#97A0AC", // Defaulted value
+      300: "#97A0AC", // Defaulted value
+      500: "#97A0AC", // Defaulted value
+      700: "#97A0AC", // Defaulted value
+    },
+    armyGreen: {
+      100: "#7F9161", // Defaulted value
+      300: "#7F9161", // Defaulted value
+      500: "#7F9161", // Defaulted value
+      700: "#7F9161", // Defaulted value
+    },
+    gold: {
+      100: "#CAB361", // Defaulted value
+      300: "#CAB361", // Defaulted value
+      500: "#CAB361", // Defaulted value
+      700: "#CAB361", // Defaulted value
+    },
+    orange: {
+      100: "#BE6C49", // Defaulted value
+      300: "#BE6C49", // Defaulted value
+      500: "#BE6C49", // Defaulted value
+      700: "#BE6C49", // Defaulted value
+    },
+    white: {
+      100: "#FFFFFF", // Defaulted value
+      300: "#FFFFFF", // Defaulted value
+      500: "#FFFFFF", // Defaulted value
+      700: "#FFFFFF", // Defaulted value
+    },
   },
 
   textStyles: {

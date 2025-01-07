@@ -257,7 +257,7 @@ const theme = extendTheme({
           },
         },
         destroy: {
-          backgroundColor: "red",
+          backgroundColor: "red.500",
           color: "white",
           border: "none",
           _hover: {

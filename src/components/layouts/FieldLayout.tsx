@@ -23,7 +23,7 @@ const FieldLayout = (props: Props) => {
           justifySelf={"flex-end"}
           textStyle={"text5"}
           marginTop={50}
-          color={helperTextStyle === "error" ? "red" : "grey.500"}
+          color={helperTextStyle === "error" ? "red.500" : "grey.500"}
         >
           {helperText}
         </FormHelperText>

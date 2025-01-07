@@ -63,36 +63,35 @@ const Input = (props: Props) => {
           onBlur={onBlur}
           value={value}
         />
-        {rightIcon ||
-          (defaultType == "password" && (
-            <InputRightElement
-              h={"100%"}
-              onClick={() =>
-                setType((prev) => (prev === "password" ? "text" : "password"))
-              }
-              cursor={"pointer"}
-            >
-              {defaultType === "password" ? (
-                type === "password" ? (
-                  <img
-                    src={showpassword}
-                    alt="search"
-                    width={"16px"}
-                    height={"16px"}
-                  />
-                ) : (
-                  <img
-                    src={hidepassword}
-                    alt="search"
-                    width={"16px"}
-                    height={"16px"}
-                  />
-                )
+        {(rightIcon || defaultType == "password") && (
+          <InputRightElement
+            h={"100%"}
+            onClick={() =>
+              setType((prev) => (prev === "password" ? "text" : "password"))
+            }
+            cursor={"pointer"}
+          >
+            {defaultType === "password" ? (
+              type === "password" ? (
+                <img
+                  src={showpassword}
+                  alt="search"
+                  width={"16px"}
+                  height={"16px"}
+                />
               ) : (
-                <img src={search} alt="search" width={"16px"} height={"16px"} />
-              )}
-            </InputRightElement>
-          ))}
+                <img
+                  src={hidepassword}
+                  alt="search"
+                  width={"16px"}
+                  height={"16px"}
+                />
+              )
+            ) : (
+              <img src={search} alt="search" width={"16px"} height={"16px"} />
+            )}
+          </InputRightElement>
+        )}
       </InputGroup>
     </FieldLayout>
   );

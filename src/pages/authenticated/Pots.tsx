@@ -34,14 +34,7 @@ const Pots = () => {
     },
   ];
   return (
-    <Flex
-      px={[200, 500]}
-      py={[300, 400]}
-      display={"flex"}
-      flex={1}
-      flexDirection={"column"}
-      gap={400}
-    >
+    <>
       <Flex justifyContent={"space-between"} alignItems={"center"}>
         <Text textStyle={"text1"}>Pots</Text>
         <Button variant={"primary"}>+Add New Pot</Button>
@@ -61,7 +54,7 @@ const Pots = () => {
           />
         ))}
       </Grid>
-    </Flex>
+    </>
   );
 };
 

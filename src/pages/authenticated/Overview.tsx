@@ -7,16 +7,7 @@ import BudgetsSection from "@/components/ui/sections/overview/BudgetsSection";
 
 const Overview = () => {
   return (
-    <Flex
-      px={[200, 500]}
-      py={[250, 400]}
-      gap={400}
-      flexDirection={"column"}
-      width={"100%"}
-      maxW={"1040px"}
-      overflowX={"hidden"}
-      mx="auto"
-    >
+    <>
       {/* Title Section */}
       <Box py={[0, 100]}>
         <Text textStyle={"text1"} color={"grey.900"}>
@@ -58,7 +49,7 @@ const Overview = () => {
           <ReccuirringBillsSection />
         </VStack>
       </Flex>
-    </Flex>
+    </>
   );
 };
 

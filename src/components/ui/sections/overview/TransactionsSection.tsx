@@ -49,7 +49,9 @@ const TransactionsSection = () => {
               transaction={transaction.transaction}
               date={transaction.date}
             />
-            <Divider color={"grey.100"} />
+            {index !== transactions.length - 1 && (
+              <Divider color={"grey.100"} />
+            )}
           </>
         ))}
       </VStack>

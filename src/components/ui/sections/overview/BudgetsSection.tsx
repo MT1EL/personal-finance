@@ -1,11 +1,17 @@
-import { Box, Flex, VStack } from "@chakra-ui/react";
+import { Box, Divider, Flex, Text, VStack } from "@chakra-ui/react";
 
 import { ResponsivePie } from "@nivo/pie";
 import PotTag from "../../tags/PotTag";
 import { useState } from "react";
 import OverviewSectionLayout from "../../../layouts/OverviewSectionLayout";
 
-const BudgetsSection = () => {
+const BudgetsSection = ({
+  tagsType,
+  hasTitle,
+}: {
+  tagsType: "vertical" | "horizontal";
+  hasTitle?: boolean;
+}) => {
   const [hoveredLegend, setHoveredLegend] = useState<string | null>(null);
 
   const data = [
@@ -15,8 +21,8 @@ const BudgetsSection = () => {
     { id: "Personal Care", value: 100, color: "#626070" },
   ];
   return (
-    <OverviewSectionLayout title={"Budgets"}>
-      <Flex gap={200} my="auto" flexDirection={["column", "row"]}>
+    <OverviewSectionLayout title={"Budgets"} hasTitle={hasTitle}>
+      <Flex gap={200} my="auto" flexDirection={["column", "column"]}>
         {/* Pie Chart */}
         <Box
           w={["100%", "100%", "250px"]}
@@ -94,21 +100,27 @@ const BudgetsSection = () => {
         <VStack
           gap={200}
           alignItems={"flex-start"}
-          display={["grid", "flex"]}
+          display={[tagsType === "horizontal" ? "flex" : "grid", "flex"]}
           gridTemplateColumns={["1fr 1fr"]}
         >
+          <Text textStyle={"text2"}> Spending Summary</Text>
           {data.map((pot) => (
-            <Box
-              onMouseEnter={() => setHoveredLegend(pot.id)}
-              onMouseLeave={() => setHoveredLegend(null)}
-              key={pot.id}
-            >
-              <PotTag
-                color={pot.color}
-                name={pot.id}
-                amount={pot.value.toString()}
-              />
-            </Box>
+            <>
+              <Box
+                onMouseEnter={() => setHoveredLegend(pot.id)}
+                onMouseLeave={() => setHoveredLegend(null)}
+                key={pot.id}
+                w="100%"
+              >
+                <PotTag
+                  color={pot.color}
+                  name={pot.id}
+                  amount={pot.value}
+                  target={50}
+                />
+              </Box>
+              <Divider display={tagsType === "horizontal" ? "none" : "block"} />
+            </>
           ))}
         </VStack>
       </Flex>

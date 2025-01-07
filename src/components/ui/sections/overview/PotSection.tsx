@@ -8,22 +8,22 @@ const PotSection = () => {
     {
       color: "green",
       name: "Holiday",
-      amount: "$200",
+      amount: 200,
     },
     {
       color: "yellow",
       name: "Car",
-      amount: "$300",
+      amount: 300,
     },
     {
       color: "cyan",
       name: "House",
-      amount: "$350",
+      amount: 350,
     },
     {
       color: "navy",
       name: "Wedding",
-      amount: "$400",
+      amount: 400,
     },
   ];
   return (

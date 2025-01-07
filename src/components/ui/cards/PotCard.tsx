@@ -1,13 +1,6 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Image,
-  Progress,
-  Text,
-  VStack,
-} from "@chakra-ui/react";
-import editIcon from "@/assets/images/icon-ellipsis.svg";
+import { Button, Flex, Progress, Text, VStack } from "@chakra-ui/react";
+
+import CardsTitle from "./shared/CardsTitle";
 
 type Props = {
   color: string;
@@ -27,13 +20,7 @@ const PotCard = (props: Props) => {
       borderRadius={"12px"}
       bg="white"
     >
-      <Flex justifyContent={"space-between"} w={"100%"}>
-        <Flex gap={200} alignItems={"center"}>
-          <Box w={"16px"} h={"16px"} bg={color} borderRadius={"50%"} />
-          <Text textStyle={"text2"}>{name}</Text>
-        </Flex>
-        <Image src={editIcon} alt="edit" />
-      </Flex>
+      <CardsTitle title={name} color={color} />
 
       <VStack gap={200} w={"100%"}>
         <Flex justifyContent={"space-between"} w={"100%"} alignItems={"center"}>
